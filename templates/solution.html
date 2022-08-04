@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<center>
+
+  <div class="game-container">
+    <div class="grid-container">
+      <table>
+        {% for i in range(9) %}
+        <tr>
+          <div class="grid-row">
+            
+            {% for j in range(9) %}
+            <td>
+              <div class="grid-cell">
+                <input class="fadein-container"  name='cell-input' value="{{ solved_puzzle[i][j] }}" readonly>
+              </div>
+            </td>
+            {% endfor %}
+          </div>
+        </tr>
+        {% endfor %}
+      </table>
+        <div class='button-container fadein-container'>
+            <a class="btn btn-primary btn-block" href="{{ url_for('index') }}" method="post">Back</a>
+        </div>
+    </div>
+  </div>
+  </div>
+</center>
+
+{% endblock %}

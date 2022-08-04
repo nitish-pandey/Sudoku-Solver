@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+<div class="game-container">
+  <div class="grid-container">
+
+    <form action="{{ url_for('solution') }}" method="post" name="sudoku-input">
+      <table>
+      {% for i in range(9) %}
+      <tr>
+        <div class="grid-row">
+          {% for j in range(9) %}
+          <td>
+            <div class="grid-cell">
+              <input class='fadein-container' type="text" maxlength="1" name='cell-input[{{ j+i*9 }}]' class="def-txt-input">
+            </div>
+            </td>
+          {% endfor %}
+          
+        </div>
+      </tr>
+      {% endfor %}
+      </table>
+      <div class="button-container">
+        <input type="submit" value="Solve" class="btn btn-primary btn-block">
+        <button id="clear-btn" type="button" class="btn btn-secondary btn-block">Clear</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
