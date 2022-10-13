@@ -45,3 +45,5 @@ def generate(puzzle):
 if __name__ == '__main__':
     app.secret_key='jkhjgdasjhdgs'
     app.run(debug=True,port=2200)
+
+
